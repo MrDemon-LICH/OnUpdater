@@ -7,3 +7,6 @@ Please notice the app needs external edits to the following files in order to en
 
 > /res/values/styles.xml
 > /res/values-v25/styles.xml
+>
+Credits
+@salvogiangri for OnUpdate
