@@ -31,9 +31,15 @@ public class FirmwareInfoUtils {
         int prop = PropUtils.getInt("ro.on.enso.version", 0);
 
         if (prop != 0) {
-            return prop / 10000 + "." + (prop % 10000) / 100 + "." + (prop % 1000) / 100;
-        } else
+           
+            int year = prop / 10000;
+            int month = (prop % 10000) / 100;
+            int day = prop % 100;
+
+            return year + "." + month + "." + day;
+        } else {
             return null;
+        }
     }
 
     public static String getKernelVersion() {
@@ -56,9 +62,15 @@ public class FirmwareInfoUtils {
 
         if (prop != 0) {
             int oneUIversion = prop - 90000;
-            return oneUIversion / 10000 + "." + (oneUIversion % 10000) / 100;
-        } else
+
+            int major = oneUIversion / 10000;
+            int minor = 1;
+            int patch = 1;
+
+            return major + "." + minor + "." + patch;
+        } else {
             return null;
+        }
     }
 
     public static String getSecurityPatchVersion() {
@@ -77,8 +89,14 @@ public class FirmwareInfoUtils {
         int prop = PropUtils.getInt("ro.on.core.version", 0);
 
         if (prop != 0) {
-            return prop / 10000 + "." + (prop % 10000) / 100 + "." + (prop % 1000) / 100;
-        } else
+            // Obtener el año, mes y día
+            int year = prop / 10000;
+            int month = (prop % 10000) / 100;
+            int day = prop % 100;
+
+            return year + "." + month + "." + day;
+        } else {
             return null;
+        }
     }
 }
